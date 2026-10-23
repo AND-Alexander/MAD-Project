@@ -7,4 +7,35 @@
     android:layout_height="match_parent"
     tools:context=".Suggested_Recipes">
 
+    <ListView
+        android:id="@+id/ltvSuggestion"
+        android:layout_width="410dp"
+        android:layout_height="296dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="36dp" />
+
+    <ListView
+        android:id="@+id/ltvAlmost"
+        android:layout_width="407dp"
+        android:layout_height="342dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="388dp" />
+
+    <TextView
+        android:id="@+id/txtAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Suggested Recipes"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="8dp" />
+
+    <TextView
+        android:id="@+id/txtMost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Almost There"
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="356dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

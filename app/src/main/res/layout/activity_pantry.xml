@@ -7,4 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".Pantry">
 
+    <ListView
+        android:id="@+id/lvingredients"
+        android:layout_width="410dp"
+        android:layout_height="650dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp" />
+
+    <Button
+        android:id="@+id/btnEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="667dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
