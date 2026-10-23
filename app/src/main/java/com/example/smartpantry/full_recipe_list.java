@@ -1,9 +1,11 @@
 package com.example.smartpantry;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
@@ -15,6 +17,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class full_recipe_list extends AppCompatActivity {
+
+    Button btnCrud;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,18 +33,28 @@ public class full_recipe_list extends AppCompatActivity {
 
         DataBaseAdapter databaseAdapter = new DataBaseAdapter(this);
 
-        ListView ltvSugg = findViewById(R.id.ltvSuggestion);
-        ListView ltvAlmost = findViewById(R.id.ltvAlmost);
+        ListView lvRec = findViewById(R.id.lvRecipe);
 
         SimpleCursorAdapter simpleCursorAdapter = databaseAdapter.populateListViewFromDB();
-        ltvSugg.setAdapter(simpleCursorAdapter);
-        ltvSugg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lvRec.setAdapter(simpleCursorAdapter);
+        lvRec.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Cursor cursor = (Cursor) simpleCursorAdapter.getItem(position);
                 String name = cursor.getString(0);
-                Toast.makeText(Suggested_Recipes.this, name, Toast.LENGTH_LONG).show();
+                Toast.makeText(full_recipe_list.this, name, Toast.LENGTH_LONG).show();
             }
+        });
+
+        btnCrud = findViewById(R.id.btnCrud);
+
+        btnCrud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(full_recipe_list.this, recipe_crud.class);
+                startActivity(i);
+            }
+        });
 
     }
 }

@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class home_page extends AppCompatActivity {
 
-    Button btnPantry, btnSuggest;
+    Button btnPantry, btnSuggest, btnFull;
 
 
     @Override
@@ -29,6 +29,7 @@ public class home_page extends AppCompatActivity {
 
         btnPantry = findViewById(R.id.btnPantry);
         btnSuggest = findViewById(R.id.btnSuggest);
+        btnFull = findViewById(R.id.btnFull);
 
         btnPantry.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +42,13 @@ public class home_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(home_page.this, Suggested_Recipes.class);
+                startActivity(i);
+            }
+        });
+        btnFull.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(home_page.this, full_recipe_list.class);
                 startActivity(i);
             }
         });

@@ -30,11 +30,12 @@ public class Suggested_Recipes extends AppCompatActivity {
 
         DataBaseAdapter databaseAdapter = new DataBaseAdapter(this);
 
-            ListView lvrecipe = findViewById(R.id.lvRecipe);
+            ListView ltvSugg = findViewById(R.id.ltvSuggestion);
+            ListView ltvAlmost = findViewById(R.id.ltvAlmost);
 
             SimpleCursorAdapter simpleCursorAdapter = databaseAdapter.populateListViewFromDB();
-            lvrecipe.setAdapter(simpleCursorAdapter);
-            lvrecipe.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            ltvSugg.setAdapter(simpleCursorAdapter);
+            ltvSugg.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     Cursor cursor = (Cursor) simpleCursorAdapter.getItem(position);
