@@ -8,13 +8,13 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-public class DataBaseAdapter {
+public class DBRecipeHelper {
 
     DatabaseHelper helper;
     SQLiteDatabase db;
     Context context;
 
-    public DataBaseAdapter(Context context) {
+    public DBRecipeHelper(Context context) {
         helper = new DatabaseHelper(context);
         db = helper.getWritableDatabase();
         this.context = context;
@@ -29,7 +29,7 @@ public class DataBaseAdapter {
         int[] toViewIDs = new int[]{R.id.recipe_name, R.id.recipe_ingredients};
         SimpleCursorAdapter contactAdapter = new SimpleCursorAdapter(
                 context,
-                R.layout.Single_item,
+                R.layout.single_item,
                 cursor,
                 fromFieldNames,
                 toViewIDs

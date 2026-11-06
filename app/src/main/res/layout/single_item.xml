@@ -24,9 +24,5 @@
             android:text="Ingredients"
             android:textSize="18sp"
             android:id="@+id/recipe_ingredients"/>
-
-
     </LinearLayout>
-
-
 </LinearLayout>

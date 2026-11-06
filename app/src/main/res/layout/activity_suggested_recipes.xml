@@ -9,33 +9,24 @@
 
     <ListView
         android:id="@+id/ltvSuggestion"
-        android:layout_width="410dp"
-        android:layout_height="296dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="36dp" />
-
-    <ListView
-        android:id="@+id/ltvAlmost"
-        android:layout_width="407dp"
-        android:layout_height="342dp"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="388dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAll" />
 
     <TextView
         android:id="@+id/txtAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
         android:fontFamily="sans-serif-medium"
         android:text="Suggested Recipes"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="8dp" />
+        app:layout_constraintBottom_toTopOf="@+id/ltvSuggestion"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtMost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-medium"
-        android:text="Almost There"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="356dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

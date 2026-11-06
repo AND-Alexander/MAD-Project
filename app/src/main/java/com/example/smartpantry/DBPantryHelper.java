@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.AdapterView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
@@ -29,7 +30,7 @@ public class DBPantryHelper {
         int[] toViewIDs = new int[]{R.id.ingredient, R.id.ingredient_amount};
         SimpleCursorAdapter contactAdapter = new SimpleCursorAdapter(
                 context,
-                R.layout.Single_item,
+                R.layout.si_pan,
                 cursor,
                 fromFieldNames,
                 toViewIDs

@@ -31,7 +31,7 @@ public class full_recipe_list extends AppCompatActivity {
             return insets;
         });
 
-        DataBaseAdapter databaseAdapter = new DataBaseAdapter(this);
+        DBRecipeHelper databaseAdapter = new DBRecipeHelper(this);
 
         ListView lvRec = findViewById(R.id.lvRecipe);
 

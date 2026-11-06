@@ -1,9 +1,11 @@
 package com.example.smartpantry;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
@@ -15,6 +17,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class Pantry extends AppCompatActivity {
+
+    Button btnEdit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +36,25 @@ public class Pantry extends AppCompatActivity {
         ListView list = findViewById(R.id.lvingredients);
 
         SimpleCursorAdapter simpleCursorAdapter = dbhelper.populateListViewFromDB();
-        dbhelper.setAdapter(simpleCursorAdapter);
-        dbhelper.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        list.setAdapter(simpleCursorAdapter);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Cursor cursor = (Cursor) simpleCursorAdapter.getItem(position);
                 String name = cursor.getString(0);
                 String amount = cursor.getString(1);
                 Toast.makeText(Pantry.this, name, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        btnEdit = findViewById(R.id.btnUpdate);
+
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Pantry.this, pantry_crud.class);
+                startActivity(i);
             }
         });
     }

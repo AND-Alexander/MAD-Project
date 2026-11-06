@@ -28,10 +28,9 @@ public class Suggested_Recipes extends AppCompatActivity {
 
         });
 
-        DataBaseAdapter databaseAdapter = new DataBaseAdapter(this);
+        DBRecipeHelper databaseAdapter = new DBRecipeHelper(this);
 
             ListView ltvSugg = findViewById(R.id.ltvSuggestion);
-            ListView ltvAlmost = findViewById(R.id.ltvAlmost);
 
             SimpleCursorAdapter simpleCursorAdapter = databaseAdapter.populateListViewFromDB();
             ltvSugg.setAdapter(simpleCursorAdapter);
